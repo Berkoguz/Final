@@ -1,0 +1,74 @@
+•	Problem 905 : Sort Array By Parity
+
+var b=[2,3,4,5]
+
+var sortArrayByParity = function(A) {
+	let even = A.filter(a => a % 2 ===0);
+	let odd = A.filter(a => a % 2 === 1);
+	return even.concat(odd);
+}
+
+sortArrayByParity(b)
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+•	Problem 1185 : Day of the Week
+
+var tarih = new Date();
+tarih.setFullYear(2001, 2, 24);
+
+var gunler = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
+console.log(gunler[tarih.getDay()]);
+
+---------------------------------------------------------------------------------------------------------
+
+
+•	Problem 55 : Jump Game
+
+var canJump = function(nums) {
+  let max = 0; 
+
+  for(let i = 0; i < nums.length; i++) {
+      if (max < i) return false; 
+      max = Math.max(nums[i] + i, max);
+  }
+
+  return max >= nums.length - 1
+};
+
+
+---------------------------------------------------------------------------------------------------------
+
+•	Problem 575 : Distribute Candies
+
+var distributeCandies = function(candies) {
+    const count = new Set(candies);
+    return Math.min(count.size, candies.length >> 1);
+};
+
+
+---------------------------------------------------------------------------------------------------------
+
+•	Problem 345 : Reverse Vowels of a Strings
+
+var a = "mersin"
+var reverseVowels = function(s) {
+  var string = s.split('');
+  var re = /[aeiouAEIOU]/g;
+  var array = [];
+  while ((match = re.exec(s)) != null) {
+    array.push(match.index);
+  }
+  
+  for (var i = 0; i < array.lenght/2; i++) {
+    var temp = string[array[i]];
+    string[array[i]] = string[array[array.lenght - 1 - i]];
+    string[array[array.lenght - 1 - i]] = temp;
+  }
+  return string.join('');
+  
+};
+
+reverseVowels(a)
